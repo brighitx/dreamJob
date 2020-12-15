@@ -1,0 +1,125 @@
+<div class="registerContainer">
+    <div class="registerBody">
+        <p id="titleRegister">Crea tu cuenta</p>
+        <label id="subtitleRegister">Si buscas trabajo, date de alta para entrar en DreamJob</label>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="registerForm">
+            <p id="titleForm">Datos personales</p>
+            <label>Nombre
+                <input class="form-control" type="text" formControlName="name">
+            </label>
+            <ng-container *ngFor="let error of error_messages.name">
+                <div class="error-message"
+                    *ngIf="registerForm.get('name').hasError(error.type) && (registerForm.get('name').dirty || registerForm.get('name').touched)">
+                    {{ error.message }}
+                </div>
+            </ng-container>
+
+            <label>Apellidos
+                <input class="form-control" type="text" formControlName="surname">
+            </label>
+            <ng-container *ngFor="let error of error_messages.surname">
+                <div class="error-message"
+                    *ngIf="registerForm.get('surname').hasError(error.type) && (registerForm.get('surname').dirty || registerForm.get('surname').touched)">
+                    {{ error.message }}
+                </div>
+            </ng-container>
+
+            <label>DNI/NIF
+                <input class="form-control" type="text" formControlName="dni">
+            </label>
+            <ng-container *ngFor="let error of error_messages.dni">
+                <div class="error-message"
+                    *ngIf="registerForm.get('dni').hasError(error.type) && (registerForm.get('dni').dirty || registerForm.get('dni').touched)">
+                    {{ error.message }}
+                </div>
+            </ng-container>
+
+            <label>Teléfono
+                <input class="form-control" type="text" formControlName="phone">
+            </label>
+            <ng-container *ngFor="let error of error_messages.phone">
+                <div class="error-message"
+                    *ngIf="registerForm.get('phone').hasError(error.type) && (registerForm.get('phone').dirty || registerForm.get('phone').touched)">
+                    {{ error.message }}
+                </div>
+            </ng-container>
+
+            <label>Provincia</label>
+            <mat-form-field>
+                <mat-select [(value)]="province" formControlName="province">
+                    <mat-option *ngFor="let province of provinces" [value]="province.nm"
+                        (click)="changeMunicipality(province.id)">{{province.nm}}</mat-option>
+                </mat-select>
+                <ng-container *ngFor="let error of error_messages.province">
+                    <div class="error-message"
+                        *ngIf="registerForm.get('province').hasError(error.type) && (registerForm.get('province').dirty || registerForm.get('province').touched)">
+                        {{ error.message }}
+                    </div>
+                </ng-container>
+            </mat-form-field>
+
+            <label>Municipio</label>
+            <mat-form-field>
+                <mat-select [(value)]="municipality" formControlName="municipality">
+                    <mat-option *ngFor="let municipality of municipalitiesFilter" [value]="municipality.nm">{{municipality.nm}}</mat-option>
+                </mat-select>
+                <ng-container *ngFor="let error of error_messages.municipality">
+                    <div class="error-message"
+                        *ngIf="registerForm.get('municipality').hasError(error.type) && (registerForm.get('municipality').dirty || registerForm.get('municipality').touched)">
+                        {{ error.message }}
+                    </div>
+                </ng-container>
+            </mat-form-field>
+
+            <p id="titleForm">Datos de tu cuenta</p>
+
+            <label>Email
+                <input class="form-control" type="email" formControlName="email">
+            </label>
+            <div class="error-messages">
+                <ng-container *ngFor="let error of error_messages.email">
+                    <div class="error-message"
+                        *ngIf="registerForm.get('email').hasError(error.type) && (registerForm.get('email').dirty || registerForm.get('email').touched)">
+                        {{ error.message }}
+                    </div>
+                </ng-container>
+            </div>
+
+            <label>Contraseña
+                <input class="form-control" formControlName="password" type="password">
+            </label>
+            <div class="error-messages">
+                <ng-container *ngFor="let error of error_messages.password">
+                    <div class="error-message"
+                        *ngIf="registerForm.get('password').hasError(error.type) && (registerForm.get('password').dirty || registerForm.get('password').touched)">
+                        {{ error.message }}
+                    </div>
+                </ng-container>
+            </div>
+
+            <label>Confirma tu contraseña
+                <input class="form-control" formControlName="confirmpassword" type="password">
+            </label>
+            <div class="error-messages">
+                <ng-container *ngFor="let error of error_messages.confirmpassword">
+                    <div class="error-message"
+                        *ngIf="registerForm.get('confirmpassword').hasError(error.type) && (registerForm.get('confirmpassword').dirty || registerForm.get('confirmpassword').touched)">
+                        {{ error.message }}
+                    </div>
+                </ng-container>
+                <div class="error-message"
+                    *ngIf="!registerForm.get('confirmpassword').errors && registerForm.hasError('passwordNotMatch') && (registerForm.get('confirmpassword').dirty || registerForm.get('confirmpassword').touched)">
+                    Las contraseñas no coinciden
+                </div>
+            </div>
+
+            <button type="submit" class="buttonRegister" [disabled]="!registerForm.valid">REGISTRAR</button>
+        </form>
+
+        <mat-list>
+            <mat-divider></mat-divider>
+            <mat-list-item routerLink="/login">¿Ya tienes una cuenta? Entra</mat-list-item>
+        </mat-list>
+    </div>
+</div>

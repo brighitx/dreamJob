@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyDMKrnmGkFij73839GS6A5SpRHeMYYBg2U",
+    authDomain: "briapispotify.firebaseapp.com",
+    databaseURL: "https://briapispotify.firebaseio.com",
+    projectId: "briapispotify",
+    storageBucket: "briapispotify.appspot.com",
+    messagingSenderId: "818845814762",
+    appId: "1:818845814762:web:b264eb4d7a295a9dfd2c93",
+    measurementId: "G-QKR9W9HFWM"
+  }
 };
 
 /*

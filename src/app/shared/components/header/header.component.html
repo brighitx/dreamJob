@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="mx-auto order-0">
+        <a class="navbar-brand mx-auto" [routerLink]="['']">dreamJob</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['buscador']">Buscar empleo</a>
+            </li>
+        </ul>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto" *ngIf="user$ | async as user; else login">
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="user" [routerLink]="['perfil']">Perfil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="user" (click)="onLogout()">Cerrar sesión</a>
+            </li>
+        </ul>
+        <ng-template #login>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item  dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">REGISTRAR</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['empresa']">ALTA EMPRESA</a>
+                        <a class="dropdown-item" [routerLink]="['candidato']">ALTA CANDIDATO</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['login']">ENTRAR</a>
+                </li>
+            </ul>
+        </ng-template>
+    </div>
+</nav>

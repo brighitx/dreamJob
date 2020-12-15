@@ -1,0 +1,30 @@
+<div class="loginBody">
+    <p id="titleLogin">Iniciar sesión</p>
+    <label id="subtitleLogin">Entra en DreamJob</label>
+    <form (ngSubmit)="onSubmit()">
+        <label>Email
+            <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="user.email"
+                required type="email" name="email"
+                pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$">
+        </label>
+        <p></p>
+        <label>Contraseña
+            <input class="form-control" type="password" [(ngModel)]="user.password" name="password">
+        </label>
+        <p></p>
+        <a (click)="resetPassword()" role="button">¿Has olvidado tu contraseña?</a>
+        <p></p>
+        <div class="divBtnLogin">
+            <button class="buttonLogin" type="submit">ENTRAR</button>
+        </div>
+    </form>
+    <label *ngIf="exist">Usuario y/o contraseña incorrectos</label>
+    
+    <mat-list>
+        <mat-divider></mat-divider>
+        <mat-list-item routerLink="/empresa">¿Eres una empresa y no tienes cuenta? Registrate</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item routerLink="/candidato">¿Eres un candidato y no tienes cuenta? Registrate</mat-list-item>
+    </mat-list>
+
+</div>

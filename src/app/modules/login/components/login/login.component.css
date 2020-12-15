@@ -1,0 +1,37 @@
+.loginBody{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#titleLogin{
+    font-size: 30px;
+}
+
+#subtitleLogin{
+    color: #28a745;
+    text-align-last: center;
+}
+
+.divBtnLogin{
+    text-align-last: center;
+}
+
+.buttonLogin{
+    background: #28a745;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+label{
+    width: 100%;
+}
+
+.mat-list-base{
+    width: 100%;
+}

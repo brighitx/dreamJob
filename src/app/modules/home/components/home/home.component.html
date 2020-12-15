@@ -1,0 +1,30 @@
+<div class="SearchJob">
+    <label id="Title">Estás más cerca de tu próximo empleo</label>
+    <div id="Search">
+        <label id="TitleSearch">Busco ofertas de...</label>
+        <form class="example-form" (ngSubmit)="onSubmit()">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="ej: Diseñador, programador..." name="name" [(ngModel)]="name">
+            </mat-form-field>
+            <button type="submit" class="btn btn-success" (click)="navegar()" >Buscar</button>
+        </form>  
+    </div>
+</div>
+
+<div class="options">
+    <mat-card>
+        <mat-card-title>Ofertas de empleo</mat-card-title>
+        <img mat-card-sm-image src="../../../../../assets/ofertasempleo.png">
+        <mat-card-subtitle>{{offersSize}}</mat-card-subtitle>
+    </mat-card>
+    <mat-card>
+        <mat-card-title>Personas registradas</mat-card-title>
+        <img mat-card-sm-image src="../../../../../assets/personas.png">
+        <mat-card-subtitle>{{usersSize}}</mat-card-subtitle>
+    </mat-card>
+    <mat-card>
+        <mat-card-title>Empresas registradas</mat-card-title>
+        <img mat-card-sm-image src="../../../../../assets/empresas.png">
+        <mat-card-subtitle>{{enterprisesSize}}</mat-card-subtitle>
+    </mat-card>
+</div>

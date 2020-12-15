@@ -1,0 +1,16 @@
+<div class="viewContainer">
+    <div class="viewBody">
+        <a id="viewTitle">Tus ofertas</a>
+        <mat-card *ngFor="let item of offers">
+            <div class="viewDelete">
+                <mat-icon (click)="deleteOffer(item.id)">delete</mat-icon>
+                <mat-card-subtitle>{{item.ubication}} - {{item.date}}</mat-card-subtitle>
+            </div>
+            <mat-card-title>{{item.title}}</mat-card-title>
+            <mat-card-content>{{item.description}}</mat-card-content>
+            <mat-card-subtitle>Puestos: {{item.employments}}</mat-card-subtitle>
+            <mat-card-actions (click)="viewCandidates(item.id)">VER CANDIDATOS</mat-card-actions>
+            <mat-card-footer></mat-card-footer>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+.createContainer{
+    background-color: #FFFAEF;
+    padding: 30px;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 100%;
+}
+
+.createBody{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: white;
+    border-radius: 20px;
+}
+
+#offerTitle{
+    font-size: 30px;
+}
+.offerForm{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+}
+.mat-form-field {
+    width: 100%;
+}
+label{
+    width: 100%;
+}
+
+.buttonOffer{
+    background: #28a745;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:disabled {
+    background: grey;
+}
+
+#titleForm{
+    font-weight: bold;
+}

@@ -1,0 +1,47 @@
+.SearchJob{
+    padding: 30px;
+    background-image: url("../../../../../assets/headerHome.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+#Title{
+    font-size: 30px;
+    color: white;
+}
+#Search{
+    margin-top: 30px;
+    background-color: rgba(0, 255, 76, 0.274);
+    border-radius: 20px;
+    padding: 30px;
+}
+#TitleSearch{
+    font-size: 20px;
+    color: white;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+.example-full-width {
+    width: 100%;
+}
+.options {
+    display: flex;
+}
+mat-card {
+    width: 35%;
+    text-align-last: center;
+    font-size: 17px;
+}
+mat-card img{
+    width: 55px;
+    height: 55px;
+}
+mat-card-subtitle{
+    font-size: 20px;
+    margin-top: 10px !important;
+}
+  

@@ -1,0 +1,16 @@
+<div class="viewContainer">
+    <div class="viewBody">
+        <a id="viewTitle">Candidatos inscritos en esta oferta</a>
+        <mat-card *ngFor="let item of candidates">
+            <div class="imagePosition">
+                <img mat-card-image [src]="item.image">
+            </div>
+            <mat-card-title>Nombre: {{item.name}}, {{item.surname}}</mat-card-title>
+            <mat-card-subtitle>Email: {{item.email}}</mat-card-subtitle>
+            <mat-card-subtitle>Teléfono: {{item.phone}}</mat-card-subtitle>
+            <mat-card-content>Dirección: {{item.address.municipality}}, {{item.address.province}}</mat-card-content>
+            <mat-card-footer></mat-card-footer>     
+        </mat-card>
+        <p class="nothing" *ngIf="withoutCandidates">No hay candidatos inscritos en esta oferta :(</p>
+    </div>
+</div>

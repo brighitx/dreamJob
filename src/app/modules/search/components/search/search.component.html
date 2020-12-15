@@ -1,0 +1,19 @@
+<div class="searchContainer">
+    <div class="searchBody">
+        <a id="titleSearch">Busca tu próximo empleo</a>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Busco ofertas de..." [(ngModel)]="term">
+        </div>
+        <img [src]="url">
+        <mat-card *ngFor="let item of offers | filter:term">
+            <a class="enterpriseName">Empresa: {{item.enterprise.name}}</a>
+            <p class="enterpriseDescription">{{item.enterprise.description}}</p>
+            <mat-card-subtitle>{{item.ubication}} - {{item.date}}</mat-card-subtitle>
+            <mat-card-title>{{item.title}}</mat-card-title>
+            <mat-card-content>{{item.description}}</mat-card-content>
+            <mat-card-subtitle>Puestos: {{item.employments}}</mat-card-subtitle>
+            <mat-card-actions (click)="inscribe(item.id)" *ngIf="isCheck">INSCRIBIRSE</mat-card-actions>
+            <mat-card-footer></mat-card-footer>
+        </mat-card>
+    </div>
+</div>
